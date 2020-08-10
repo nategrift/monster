@@ -1,0 +1,140 @@
+// BASE RESET CODE
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 62.5%;
+
+}
+
+body {
+   font-family: 'Kulim Park', sans-serif;
+   background-image: $color-background;
+   background-size: fit;
+   width: 100%;
+   height: 100vh;
+}
+
+hr {
+   border: 1px solid $color-extra;
+   box-shadow: 0 .5rem 1rem rgba($color-black, .3);
+}
+
+// FLEX ROW 4 of them verticaly
+.row-1-of-4 {
+   height: 25vh;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.row-2-of-4 {
+   height: 50vh;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.background {
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   background-image: url(../img/background.jpg);
+   background-size: cover;
+   filter: blur(10px) brightness(30%);
+   z-index: -1;
+}
+
+.centerAll {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 100%;
+   text-align: center;
+}
+
+.head_text {
+   font-size: 4rem;
+   text-transform: capitalize;
+   color: $color-primary;
+   text-shadow: 0px 1rem 2rem rgba($color-black, .2);
+}
+
+.secondary_text {
+   font-size: 2.5rem;
+   color: $color-secondary;
+   text-shadow: 0px 1rem 2rem rgba($color-black, .2);
+}
+
+.input {
+   width: 15rem;
+   outline: none;
+   border: none;
+   line-height: 2.4rem;
+   font-size: 2rem;
+   padding: 2px .8rem;
+   background-color: $color-form;
+   border: 1px solid $color-secondary;
+   color: $color-secondary;
+   box-shadow: -.1rem .2rem .3rem rgba($color-extra, .4) inset;
+
+   &::placeholder {
+      color: $color-secondary;
+      opacity: .5;
+   }
+
+   &:focus {
+      outline: 2px solid $color-primary;
+   }
+}
+
+.btn {
+   font-size: 1.8rem;
+   text-decoration: none;
+   text-transform: uppercase;
+   width: 12rem;
+   padding: .8rem 1rem;
+   border-radius: 1px;
+   background-image: linear-gradient(to right, $color-primary, $color-shine);
+   color: $color-tertiary;
+   box-shadow: 0px 1rem 2rem rgba($color-black, .3);
+   transition: all .3s;
+   backface-visibility: hidden;
+   text-align: center;
+
+   &:hover {
+      box-shadow: 0px 1rem 2rem rgba($color-black, .25);
+      transform: translateY(-1px) scale(1.05);
+   }
+
+   &:active {
+      box-shadow: 0px 1rem 1rem rgba($color-black, .3);
+      transform: translateY(-1px);
+   }
+}
+
+.copyright {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   text-align: right;
+   margin: .5rem;
+   color: $color-grey;
+   font-weight: 100;
+   font-size: 10px;
+}
+
+.loading {
+   height: 10rem;
+   animation: loading 2s linear infinite;
+}

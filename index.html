@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Monster Attack</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Kulim+Park&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="src/data.js" defer></script>
+  <script type="text/javascript" src="src/index.js" defer></script>
+  <script type="text/javascript" src="src/Monster.js" defer></script>
+  <script type="text/javascript" src="src/Player.js" defer></script>
+  <script type="text/javascript" src="src/Attack.js" defer></script>
+</head>
+<body>
+   <main>
+      <section id="preload"><!--SECTION CENTERALL -->
+         <div class="centerAll">
+            <img src="assets/img/other/loading.svg" alt="loading" class="loading margin-top-medium">
+            <h2 class="head_text margin-top-large">Welcome to the game of MonsterAttack</h2>
+            <h3 class="secondary_text margin-top-medium">Please input your name to begin:</h3>
+            <input type="text" class="input margin-top-small" id="name" placeholder="i.e Knight">
+            <a href="#" id="continue-start" class="btn margin-top-medium">Continue</a>
+         </div>
+         <h6 class="copyright">2020 Copyright &copy; Nate Grift</h6>
+      </section> <!--SECTION CENTERALL END -->
+      <section id="start"> <!--SECTION START -->
+         <div class="row-1-of-4">
+            <img src="assets/img/character/character_1.svg" id="character-1" alt="character" class="character_image">
+            <a href="#" id="character-1-select" class="btn margin-top-medium">&larr; Select</a>
+            <h3 class="secondary_text margin-top-medium select_padding">Select your character </h3>
+            <a href="#" id="character-2-select" class="btn margin-top-medium">Select &rarr;</a>
+            <img src="assets/img/character/character_2.svg" id="character-2" alt="character" class="character_image">
+         </div>
+         <hr>
+         <div class="row-2-of-4">
+            <div class="monsterSide">
+               <img src="assets/img/monster/monster_1.svg" id="monster-1" alt="monster 1" class="character_image">
+               <img src="assets/img/monster/monster_2.svg" id="monster-2" alt="monster 2" class="character_image">
+            </div>
+            <div class="monsterSide">
+               <a href="#" id="monster-0-select" class="btn margin-top-medium">&larr; Select</a>
+               <a href="#" id="monster-1-select" class="btn margin-top-medium margin-top-giant">&larr; Select</a>
+            </div>
+            <div class="monsterSide">
+               <h3 class="secondary_text margin-top-medium">Choose a <br> Monster</h3>
+            </div>
+            <div class="monsterSide">
+               <a href="#" id="monster-2-select" class="btn margin-top-medium">Select &rarr;</a>
+               <a href="#" id="monster-3-select" class="btn margin-top-medium margin-top-giant">Select &rarr;</a>
+            </div>
+            <div class="monsterSide">
+               <img src="assets/img/monster/monster_3.svg" id="monster-3" alt="monster 3" class="character_image">
+               <img src="assets/img/monster/monster_4.svg" id="monster-4" alt="monster 4" class="character_image">
+            </div>
+         </div>
+         <hr>
+         <div class="difficulty">
+            <div class="hardOpt">
+               <a href="#" id="difficultyOpt-0" value="100" class="btn hardOpt__btn">100 Health &hearts;</a>
+               <a href="#" id="difficultyOpt-1" class="btn hardOpt__btn">150 Health &hearts;</a>
+               <a href="#" id="difficultyOpt-2" class="btn hardOpt__btn">200 Health &hearts;</a>
+            </div>
+         </div>
+         <hr>
+         <div class="difficulty">
+            <a href="#" class="btn margin-top-small" id="gameView">Continue</a>
+         </div>
+      </section> <!--SECTION START END -->
+     <section id="game"><!--SECTION GAME -->
+        <div class="background"></div>
+        <div class="gameCon">
+         <div class="game__section">
+            <img src="assets/img/monster/monster_1.svg" id="monsterRender" alt="monster 1" class="game__Image animatedCharacter">
+            <h3 class="game__names">Monster</h3>
+            <progress id="monster-health" max="100" value="100"></progress>
+            <h4 class="healthDisplay"><span id="healthDisplayMonster">100</span>%</h4>
+         </div>
+         <div class="game__section">
+            <img src="assets/img/character/character_1.svg" alt="character 1" class="game__Image animatedCharacter" id="characterRender">
+            <h3 class="game__names" id="nameDisplay">Player</h3>
+            <progress id="player-health" max="100" value="100"></progress>
+            <h4 class="healthDisplay"><span id="healthDisplayPlayer">100</span>%</h4>
+         </div>
+      </div>
+      <div class="actionCon">
+         <div class="remaining">
+            <a href="#" id="attack" class="actionCon__btn"><img src="assets/img/attack/attack.svg" alt="attack" class="game__btn">Attack</a>
+         </div>
+         <div class="remaining">
+            <a href="#" id="attack-strong" class="actionCon__btn"><img src="assets/img/attack/attack_strong.svg" alt="attack strong" class="game__btn">Strong Attack</a>
+            <h5 id="tries-remaining-1" class="remaining-tries-text"></h5>
+         </div>
+         <div class="remaining">
+            <a href="#" id="heal" class="actionCon__btn"><img src="assets/img/attack/heal.svg" alt="heal" class="game__btn">Heal</a>
+            <h5 id="tries-remaining-2" class="remaining-tries-text"></h5>
+         </div>
+      </div>
+      <div class="popup" id="popup">
+        <div id="popup__content">
+            <a href="#" id="popup__close">&times;</a>
+            <div class="menu">
+               <h3 class="secondary_text margin-top-medium" id="results"></h3>
+               <div class="menuSub">
+                  <a href="index.html" class="btn" >Quit</a>
+                  <a href="#" id="retryBtn" class="btn" >Retry</a>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section><!--SECTION GAME END -->
+   </main>
+</body>
+</html>
+
+<!--<a href="https://www.freepik.com/free-photos-vectors/hand">Hand vector created by freepik - www.freepik.com</a>-->

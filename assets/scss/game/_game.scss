@@ -1,0 +1,111 @@
+.gameCon {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   z-index: 2;
+}
+
+.game {
+   z-index: 2;
+   &__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      width: 30%;
+      z-index: 2;
+   }
+
+   &__names {
+      font-size: 24px;
+      color: $color-primary;
+      text-shadow: 0px 10px 20px rgba($color-black, .6);
+      margin-bottom: 1.5rem;
+   }
+
+   &__btn {
+      height: 200px;
+      -webkit-user-drag: none;
+   }
+}
+
+.actionCon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 5%;
+   text-align: center;
+   z-index: 2;
+
+
+   &__btn {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      transition: all .2s;
+      border-radius: 25%;
+      width: 300px;
+      font-size: 30px;
+      color: $color-secondary;
+      text-decoration: none;
+      z-index: 2;
+      margin: 5px 15px;
+
+      &:hover {
+         transform: translateY(-10px);
+      }
+
+      &:active {
+         transform: translateY(-5px);
+      }
+   }
+}
+
+//progress {
+progress {
+  width: 80%;
+  height: 2rem;
+  color: $color-black;
+  border: 1px solid $color-heal;
+  font-size: 24px;
+}
+
+progress[value]::-webkit-progress-bar,
+progress[value] {
+  background-color: #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: $color-heal;
+  transition: all 0.2s ease-out;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: $color-heal;
+  transition: all 0.2s ease-out;
+}
+
+.healthDisplay {
+   color: $color-heal-2;
+   padding: 1rem;
+   font-size: 2.4rem;
+}
+
+.remaining {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.remaining-tries-text {
+   font-size: 30px;
+   color: #525252;
+   padding: .5rem;
+   background-color: #e05c5c;
+   font-weight: bold;
+   display: inline-block;
+}

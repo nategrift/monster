@@ -1,0 +1,43 @@
+
+
+.character_image {
+   height: 24vh;
+   width: auto;
+   padding: 0rem 2rem;
+}
+
+.select_padding {
+   padding: 2rem 10rem;
+}
+
+.monsterSide {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+
+.difficulty {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.hardOpt {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+
+   &__btn {
+      margin: 5rem;
+      background-image: $image-heal;
+      width: 15rem;
+   }
+}
+
+.selected {
+   background-image: linear-gradient(to right, $color-secondary, $color-secondary);
+   box-shadow: 0rem .5rem .5rem rgba($color-black, .4);
+}
